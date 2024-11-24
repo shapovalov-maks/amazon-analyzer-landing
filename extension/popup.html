@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Analyzer</title>
+    <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Product Analyzer</h1>
+            <div class="status" id="connectionStatus">
+                <span class="status-dot"></span>
+                <span class="status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="control-panel">
+                <button id="analyzeButton" class="primary-button">
+                    <span class="button-icon">📊</span>
+                    Analyze Product
+                </button>
+                <div class="loading-spinner" id="loadingSpinner"></div>
+            </div>
+
+            <div class="results hidden" id="resultsContainer">
+                <div class="section">
+                    <h2>Competition Analysis</h2>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <h3>Competition Score</h3>
+                            <div class="score" id="competitionScore">-</div>
+                            <div class="progress-bar">
+                                <div class="progress" id="competitionProgress"></div>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <h3>Market Saturation</h3>
+                            <div class="score" id="marketSaturation">-</div>
+                            <div class="progress-bar">
+                                <div class="progress" id="saturationProgress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Profit Analysis</h2>
+                    <div class="metric-grid">
+                        <div class="metric-card">
+                            <h3>Profit Potential</h3>
+                            <div class="score" id="profitPotential">-</div>
+                        </div>
+                        <div class="metric-card">
+                            <h3>Monthly Sales</h3>
+                            <div class="score" id="monthlySales">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>AI Insights</h2>
+                    <div class="insights-container" id="aiInsights">
+                        <div class="insight-card">
+                            <h3>Summary</h3>
+                            <p id="aiSummary">-</p>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Opportunities</h3>
+                            <ul id="aiOpportunities"></ul>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Recommendations</h3>
+                            <ul id="aiRecommendations"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-message hidden" id="errorMessage">
+                <span class="error-icon">⚠️</span>
+                <span class="error-text"></span>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <button id="settingsButton" class="icon-button">⚙️</button>
+            <span class="version">v1.0.0</span>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
